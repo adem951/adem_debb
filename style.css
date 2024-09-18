@@ -1,0 +1,654 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    scroll-behavior: smooth;
+}
+
+:root {
+    --bg-color: rgb(245, 245, 243);
+    --second-bg-color: #F1F4FF;
+    --text-color: black;
+    --main-color: #325DCC;
+    --gradient-color: linear-gradient(45deg, #4d7aec, #0037c4);
+}
+
+#menu-icon {
+    display: none; /* Hide by default */
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 30px; /* Size of the hamburger icon */
+    cursor: pointer;
+}
+
+
+
+/* Toggle menu */
+.geometric-navbar.active .center-links {
+    transform: scaleY(1); /* Expand the menu */
+}
+
+/* Navbar Styles */
+.geometric-navbar {
+    position: fixed;
+    top: 50px; /* Space from the top of the page */
+    left: 50%; /* Centering the navbar */
+    transform: translateX(-50%); /* Shifting left to center */
+    width: 80%; /* Width of the navbar */
+    background-color: white; /* Background color */
+    z-index: 100;
+    text-align: center;
+    border-radius: 40px; /* Increased rounding for smoother edges */
+    padding: 20px 0; /* Added padding for height */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Light shadow for 3D effect */
+    /*position: relative; /* Ensure it’s positioned relative for absolutely positioned children */
+}
+
+.geometric-navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0; /* Remove padding from the list */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.geometric-navbar .home-link {
+    position: absolute;
+    left: 30px; /* Adjust to your preference */
+}
+
+.geometric-navbar .center-links {
+    display: flex;
+    gap: 30px; /* Space between center links */
+}
+
+.geometric-navbar li {
+    display: inline-block;
+    margin: 0 15px; /* Spacing for individual items */
+}
+
+.geometric-navbar a {
+    text-decoration: none;
+    color: #8c8c8c; /* Very light grey by default */
+    font-weight: 500;
+    font-size: 1.7rem; /* Increased text size */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: color 0.3s;
+}
+
+.geometric-navbar a:hover {
+    color: #4a4a4a; /* Light grey when hovered */
+}
+
+/* For selected section */
+.geometric-navbar a.active {
+    color: black !important; /* Dark grey when section is selected */
+}
+
+.geometric-navbar .logo-link {
+    font-size: 2.5rem; /* Larger font size for the logo */
+    font-weight: bold; /* Bold font weight for the logo */
+    font-family: 'Great Vibes', cursive; /* Great Vibes font for the logo */
+    color: #8c8c8c; /* Default color for the logo */
+    transition: color 0.3s;
+}
+
+.top-border, .bottom-border {
+    width: 100%;
+    height: 10px; /* Thickness of the top border */
+    background-color: transparent; /* Transparent for top border */
+}
+
+.resume-button {
+    position: absolute;
+    right: 30px; /* Position on the left inside the navbar */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    background-color: #007bff;
+    border-radius: 20px; /* Match the main geometric form */
+    padding: 10px 20px;
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.4); /* Darker and more visible shadow */
+    transition: box-shadow 0.3s; /* Remove transform transition */
+    overflow: hidden; /* Hide overflow to prevent scaling artifacts */
+}
+
+.resume-button::before { /* Create a pseudo-element for the background */
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: inherit; /* Inherit the button's background color */
+    border-radius: inherit; /* Inherit the button's rounded corners */
+    z-index: -1; /* Place behind the text */
+    transition: transform 0.3s; /* Apply the transform transition to the pseudo-element */
+}
+
+.resume-button:hover::before { /* Apply hover effect to the pseudo-element */
+    transform: scale(0.98); /* Scale down only the background */
+}
+
+.resume-button .resume-link { /* Make the style more specific */
+    text-decoration: none;
+    color: white !important; /* Fixed white text, enforce with !important */
+    font-weight: 400; /* Normal font weight */
+    font-size: 1.5rem; /* Increased text size */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    transition: color 0.3s;
+}
+
+.resume-link {
+    text-decoration: none;
+    color: white; /* Fixed white text */
+    font-weight: 400; /* Normal font weight */
+    font-size: 1.5rem; /* Increased text size */
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    position: relative; /* Ensure text stays on top */
+    z-index: 1; /* Place text above the background */
+}
+
+.resume-button .resume-link:hover { /* Also target hover specifically */
+    color: white; /* Keep text white on hover */
+    
+}
+
+.resume-button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+    transform: translateY(-50%) scale(0.98); /* Slight vertical move and scale down */
+}
+
+html {
+    font-size: 62.5%;
+    overflow-x: hidden;
+    margin:0;
+    padding: 0;
+    width : 100%;
+    height: 100%;
+}
+
+body {
+    width : 100%;
+    height: 100%;
+    background: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Poppins', sans-serif;
+}
+
+.home-section {
+  background-image:'background.png';
+  text-align: center;
+  padding: 50px;
+}
+
+.fleche {
+    color: black;
+    font-size: 3rem;
+}
+
+.intro {
+    color: #000000; /* Couleur du texte d'introduction */
+    font-size: 1.2rem;
+    margin-bottom: 0;
+}
+
+.name {
+    font-size: 3rem;
+    color: #000000; /* Couleur du nom */
+    font-weight: bold;
+    margin: 10px 0;
+}
+
+.description {
+    font-size: 1.2rem;
+    color: #000000; /* Couleur de la description */
+    margin-top: 10px;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    text-decoration: none;
+    padding: 10px 20px;
+    margin: 10px;
+    border-radius: 5px;
+    border: 1px solid #e0e0e0;
+    color: #e0e0e0; /* Couleur du texte des boutons */
+    transition: background-color 0.3s, color 0.3s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #a8c66c; /* Couleur des boutons au survol */
+    color: #1b1d1a; /* Couleur du texte des boutons au survol */
+}
+/* Hero Section */
+.hero-section {
+    height: 100vh;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+}
+
+.hero-section .hero-content h1 {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+}
+
+.hero-section .hero-content p {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+}
+
+.hero-section .btn {
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: background 0.3s;
+}
+
+.hero-section .btn:hover {
+    background: #0056b3;
+}
+
+
+/* About Section Styling */ 
+.container.about-section {
+    display: flex;     
+    flex-direction: column;     
+    justify-content: center;     
+    align-items: center;     
+    min-height: 100vh;     
+    width: 100vw;     
+    margin: 0;     
+    padding: 20px;     
+    overflow: hidden;
+ }  
+ .about-content {    
+     width: 100%;     
+     max-width: 1200px;     
+     display: flex;     
+     flex-direction: column;     
+     gap: 40px; 
+    }  
+    .about-part {     
+        position:relative;     
+        display: flex;     
+        flex-direction: column;     
+        justify-content: center;     
+        padding: 40px 100px 40px 40px;     
+        color: #fff;     
+        text-align: left;     
+        width: 100%; /*Ajouter de la largeur pour compenser la marge négative*/     
+        margin-left: 0; /*Tirer le côté gauche pour coller au bord*/     
+        border-radius: 0 100px 100px 0;     
+        overflow: hidden;     
+        opacity: 0;     
+        transform: translateX(-100%);     
+        transition: opacity 0.5s ease, transform 0.5s ease; 
+    }  
+    .about-part:nth-child(even) {     
+        align-self: flex-end;     
+        width: 100%; /*Ajouter de la largeur pour compenser la marge négative */     
+        margin-right: 0; /*Tirer le côté droit pour coller au bord */     
+        border-radius: 100px 0 0 100px;     
+        padding: 40px 40px 40px 100px;     
+        transform: translateX(100%); }  
+        .about-part.visible {     
+            opacity: 1;     
+            transform: translateX(0); 
+        }  
+    .about-part::before {     
+        content: '';     
+        position: absolute;     
+        right: 0;     
+        top: 0;     
+        width: 100px;     
+        height: 100%;     
+        background-color: inherit;     
+        border-radius: 50px 0 0 50px; 
+    }  
+    .about-part:nth-child(even)::before {     
+        left: 0;     
+        right: auto;     
+        border-radius: 0 50px 50px 0; 
+    }  
+    .block-1 { background-color:#a8c66c ; margin-left: 0; } 
+    .block-2 { background-color: #1c7b77; margin-right: 0;  } 
+    .block-3 {      background-color: #2a2d29;     margin-left: 0;  }  
+    .about-part h2 {     margin-bottom: 10px;     font-size: 2rem; }  
+    .about-part h5 {     text-transform: uppercase;     color: #a0a0a0;     margin-bottom: 5px;     font-size: 1.4rem; }  
+    .about-part ul {     list-style-type: none;     padding: 0;     font-size: medium; }  .about-part ul li, .about-part p {     margin: 10px 0;     font-size: medium; }  @media (max-width: 768px) {     
+    .about-part, .about-part:nth-child(even) {         width: 90%;         border-radius: 20px;         padding: 30px;     }      
+    .about-part::before, .about-part:nth-child(even)::before {         display: none;     } }
+    
+/* Projects Section */
+.projects-section {
+    padding: 7rem 0;
+    background: #000000;
+    color: rgb(151, 151, 151);
+}
+
+.projects-section h2 {
+    color: white;
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: rgb(30, 29, 28);
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(38, 38, 38, 0.1);
+    transition: transform 0.3s;
+    margin : 2rem;
+}
+
+.project-card img {
+    width: 100%;
+    height: auto;
+}
+
+.project-info {
+    padding: 2rem;
+    text-align: center;
+}
+
+.project-info h3 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.project-info p {
+    font-size: 1.4rem;
+    margin-bottom: 2rem;
+}
+
+.project-card:hover {
+    transform: scale(1.05);
+}
+
+.project-info .btn {
+    padding: 1rem 2rem;
+    background: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.4rem;
+    transition: background 0.3s;
+}
+
+.project-info .btn:hover {
+    background: #0056b3;
+}
+
+/* Skills Section */
+.skills-section {
+    padding: 5rem 0;
+    text-align: center;
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+.skills-section h2 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 2rem;
+    text-align: center;
+}
+
+.skill-item {
+    padding: 1rem;
+    background: var(--second-bg-color);
+    border-radius: 5px;
+    font-size: 1.6rem;
+    font-weight: bold;
+    border: 2px solid#000000;
+}
+
+
+/* Contact Section Styles */
+.contact-section {
+    padding: 5rem 0;
+    background: rgb(30, 29, 28);/* Background color of the section */
+    color: white; /* Text color */
+    text-align: left; /* Align text to the left */
+    width: 100vw; /* Set width to full viewport width */
+    max-width: none; /* Ensure no maximum width is applied */
+    position: relative; /* For positioning child elements */
+    margin: 0; /* Remove any default margins */
+}
+
+.contact-section h2 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    margin-left: 5%; /* Space from the left edge */
+}
+
+.contact-section p {
+    margin-left: 5%; /* Space from the left edge */
+    margin-bottom: 2rem;
+    font-size: medium;
+}
+
+.contact-buttons {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Space between buttons */
+    justify-content: flex-end; /* Align buttons to the right */
+    margin-top: 20px; /* Space above buttons */
+}
+.contact-button i {
+    margin-right: 8px; /* Space between the icon and text */
+}
+
+.contact-button-wrapper {
+    position: relative; /* Allow absolute positioning of the hover form */
+}
+
+.contact-button {
+    display: inline-block;
+    padding: 10px 20px;
+    color: white; /* White text color */
+    border: 2px solid transparent; /* No initial border */
+    background: transparent; /* No initial background */
+    font-size: 1.5rem;
+    cursor: pointer;
+    position: relative; /* To position the hover form */
+    text-decoration: none;
+    transition: color 0.3s, border 0.3s; /* Smooth transition for color and border */
+    margin-right: 5%;
+}
+
+.contact-button:hover {
+    color: white; /* Change text color on hover */
+    border-color: white; /* Show border on hover */
+}
+
+.contact-button .arrow {
+    margin-left: 5px;
+    display: inline-block; /* Ensure it's treated like text */
+    transform: rotate(-45deg); /* Rotate the arrow by 45 degrees */
+    transition: transform 0.3s;
+}
+
+.contact-button:hover .arrow {
+    transform: rotate(0deg); /* Reset rotation on hover */
+}
+
+.contact-info {
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    margin-left: 5%; /* Space from the left edge */
+}
+
+.contact-item {
+    display: flex;
+    align-items: center; /* Center align items */
+    margin: 10px 0; /* Space between items */
+    font-size: 1.5rem; /* Adjust font size */
+    color: white; /* Text color */
+}
+
+.contact-item i {
+    margin-right: 10px; /* Space between icon and text */
+    color: white; /* Icon color */
+}
+
+
+
+
+
+
+
+
+.footer {
+    position: relative; /* Ensures absolute children are positioned relative to this */
+    padding: 20px; /* Adjust padding as needed */
+    background-color: rgb(30, 29, 28); /* Background color of the footer */
+    overflow: hidden; /* Hides the overflow of the text */
+    height: 100px; /* Set a specific height to control visibility */
+}
+
+.footer-name {
+    font-size: 10rem; /* Size of the text */
+    font-weight: bold; /* Makes the text bold */
+    color: #ffffff; /* Neon green color */
+    text-transform: uppercase; /* Converts text to uppercase */
+    letter-spacing: -2px; /* Adjust letter spacing */
+    position: absolute; /* Position the text absolutely within the footer */
+    bottom: -40%; /* Adjust this value to control how much is cut off */
+    left: 0; /* Align to the left */
+    width: 100%; /* Make the text span the full width */
+    z-index: 1; /* Layer above any other content */
+    white-space: nowrap; /* Prevents text wrapping */
+    pointer-events: none; /* Optional: Prevent text interaction */
+    opacity: 0.6; /* Subtle, watermark-like effect */
+}
+
+/* Adjust for smaller screens */
+@media (max-width: 768px) {
+    .footer-name {
+        font-size: 6rem; /* Smaller size for mobile */
+        bottom: -30%; /* Adjust clipping for smaller screens */
+        opacity: 0.2; /* Adjust opacity for better readability */
+    }
+}
+
+
+
+
+/* Responsive */
+@media (max-width: 768px) {
+    .geometric-navbar {
+        position:fixed;
+        width: 90%;
+        top: 10px;
+    }
+
+    .geometric-navbar ul {
+        flex-direction: column;
+    }
+
+    .geometric-navbar .home-link {
+        display: none;
+    }
+
+    .geometric-navbar .center-links {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .geometric-navbar li {
+        margin: 0;
+    }
+
+}
+/* Responsive Breakpoints */
+
+
+
+@media (max-width: 576px) {
+    .container.about-section {
+        padding: 20px 0;
+    }
+    .about-content {
+        gap: 20px;
+    }
+    .about-part {
+        width: 95%;
+        padding: 20px;
+        min-height: auto;
+    }
+    .about-part h2 {
+        font-size: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-part, .about-part:nth-child(even) {
+        width: calc(100% - 40px);
+        max-width: none;
+        border-radius: 20px;
+        padding: 20px;
+        transform: none;
+    }
+
+    .about-part::before, .about-part:nth-child(even)::before {
+        display: none;
+    }
+}
+@media (max-width: 1200px) {
+    .about-part, .about-part:nth-child(even) {
+      width: calc(100% - 40px);
+      max-width: none;
+      border-radius: 20px;
+      padding: 20px;
+      transform: none;
+    }
+  
+    .about-part::before, .about-part:nth-child(even)::before {
+      display: none;
+    }
+  }
+
+@media (max-width: 1500px) {
+  .about-part, .about-part:nth-child(even) {
+    width: calc(100% - 40px);
+    max-width: none;
+    border-radius: 20px;
+    padding: 20px;
+    transform: none;
+  }
+
+  .about-part::before, .about-part:nth-child(even)::before {
+    display: none;
+  }
+}
